@@ -681,6 +681,9 @@ aplicarIdioma(idiomaActual);
     estado.className      = 'contacto__estado';
     estado.textContent    = '';
 
+    const replytoInput = form.querySelector('[name="replyto"]');
+    if (replytoInput && correoInput) replytoInput.value = correoInput.value;
+
     try {
       const resp = await fetch('https://api.web3forms.com/submit', {
         method:  'POST',
